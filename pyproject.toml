@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ufpa_sigaa_bot"
+version = "0.1.0"
+description = "A bot to interact in convenient way with the college's site."
+authors = ["italo"]
+license = "GNU"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+selenium = "^3.141.0"
+python-dotenv = "^0.17.1"
+loguru = "^0.5.3"
+get-gecko-driver = "^0.1.17"
+PyAutoGUI = "^0.9.52"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
