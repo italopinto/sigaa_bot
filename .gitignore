@@ -1,0 +1,16 @@
+# folder from pycharm 
+.idea/
+
+# environments variables file
+.env
+
+# drive to work with firefox and seleniun
+geckodriver
+geckodriver.log
+
+# python file to help with pyautogui
+position.py
+
+# poetry dependencies manager files
+poetry.lock
+pyproject.toml
