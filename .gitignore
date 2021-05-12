@@ -14,3 +14,9 @@ position.py
 # poetry dependencies manager files
 poetry.lock
 pyproject.toml
+
+# __pycache__ of classes folder
+classes/__pycache__/
+
+# the trouble model
+trouble_model.md
