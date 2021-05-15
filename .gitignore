@@ -1,6 +1,9 @@
 # folder from pycharm 
 .idea/
 
+# vscode folder
+.vscode/
+
 # environments variables file
 .env
 
@@ -17,6 +20,10 @@ pyproject.toml
 
 # __pycache__ of classes folder
 classes/__pycache__/
+tests/__pycache__/
 
 # the trouble model
 trouble_model.md
+
+# pytest files
+.pytest_cache
