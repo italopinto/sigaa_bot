@@ -21,15 +21,14 @@ class SigaaBot:
         option = Options()
         option.headless = True
         # executable_path is to the webdriver locate (absolute path) the binary of the driver
-        self.driver = webdriver.Firefox(executable_path='/home/italo/Documents/python_projects/sigaa_bot/geckodriver', options=option) #when test options=option
+        self.driver = webdriver.Firefox(options=option) #when test, options=option
         self.user = User()
-        self.sigaa_user()
 
-    def sigaa_user(self):
+    def sigaa_user(self, name:str, password:str, year:str):
         logger.debug("We're at sigaa_user method")
-        self.user.name = input("Enter your SIGAA username: ")
-        self.user.password = input("Enter your password: ")
-        self.user.year = input("Enter the school term (periodo letivo): ")
+        self.user.name = name
+        self.user.password = password
+        self.user.year = year
 
     def sigaa(self):
         self.driver.get('https://sigaa.ufpa.br/sigaa/verTelaLogin.do;jsessionid=6EC32AADFAC73E4050E1CCDC6BAB805C.bacaba2')
