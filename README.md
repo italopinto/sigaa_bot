@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/italopinto/sigaa_bot.svg?branch=main)](https://travis-ci.com/italopinto/sigaa_bot)
-
 #  SIGAA_BOT
 ### An automated way to interact with my college's site.
 ## Problem
