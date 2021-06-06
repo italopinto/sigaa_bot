@@ -1,5 +1,5 @@
-# folder from pycharm 
-.idea/
+# other files
+**.sh
 
 # vscode folder
 .vscode/
@@ -21,6 +21,8 @@ pyproject.toml
 # __pycache__ of classes folder
 classes/__pycache__/
 tests/__pycache__/
+**pyc
+**/__pycache__/
 
 # the trouble model
 trouble_model.md
