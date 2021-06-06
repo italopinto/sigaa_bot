@@ -1,6 +1,11 @@
-def func(x):
-    return x + 1
+from sigaabot.classes.sigaa import SigaaBot
+from sigaabot.classes.user import User
 
-def test_answer():
-    assert func(2) == 3
+def test_classes():
+    bot = SigaaBot()
+    user = User()
+    assert isinstance(bot, SigaaBot)
+    assert isinstance(user, User)
+
+
     
