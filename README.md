@@ -10,5 +10,5 @@ A bot to be used as a cli application, just to open and interact with the site w
 ### TODO:
 - [X] Make the bot work locally.
 - [X] Make unit tests.
-- [ ] Use `click` package to parse the aguments.
+- [X] Make the sigaa methods work
 - [ ] Organize all the file's project.
