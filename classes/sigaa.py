@@ -13,27 +13,35 @@ from .user import User
 # o caminho para o interpretador da venv poetry é esse: "/home/italo/.cache/pypoetry/virtualenvs/ufpa-sigaa-bot-s4Id-V6p-py3.8/bin/python3"
 
 class SigaaBot:
-    """
-    The class representing the bot that will interact with SIGAA site
-    """
+
     def __init__(self):
-        # the commented option below are used to test this code without open the browser
-        option = Options()
-        option.headless = True
-        # executable_path is to the webdriver locate (absolute path) the binary of the driver
-        self.driver = webdriver.Firefox(options=option) #when test, options=option
+        """
+        The class that represents the bot itself which will interact directely with the SIGAA site.
+        """
+        # the commented `option` below are used to test this code without open the browser
+        #option = Options()
+        #option.headless = True
+        self.driver = webdriver.Firefox() #when test, options=option
+        self.driver.maximize_window()
         self.user = User()
+        self.eixoX = 500
+        self.eixoY_dropdown_menu = 193
 
     def sigaa_user(self, name:str, password:str, year:str):
+        """Method to take the SIGAA credentials from the user"""
         logger.debug("We're at sigaa_user method")
         self.user.name = name
         self.user.password = password
         self.user.year = year
 
-    def sigaa(self):
+    def sigaa_site(self):
+        """
+        Method that access the site properly.
+        It ends up when land in the homepage of the user.
+        """
         self.driver.get('https://sigaa.ufpa.br/sigaa/verTelaLogin.do;jsessionid=6EC32AADFAC73E4050E1CCDC6BAB805C.bacaba2')
         time.sleep(5)
-        logger.debug("We're at the homepage.")
+        logger.debug("We're at the login page.")
         campo_user = self.driver.find_element_by_name("user.login")
         campo_user.click()
         campo_user.send_keys(self.user.name)
@@ -49,33 +57,49 @@ class SigaaBot:
         logger.debug("'Discent' page.")
         discente = self.driver.find_element_by_partial_link_text("Discente")
         discente.click()
-        logger.debug("Success!!")
+        logger.debug("We landed in the homepage successfuly!")
+        
+    # Methods that uses pyautogui: 
 
-# investigar o site do sigaa para saber se o menu dropdown é onhover ou onclick ou both
     def ver_notas(self):
-        pyautogui.moveTo(self.eixoX, self.eixoY_ensino) #menu ensino
-        pyautogui.moveTo(self.eixoX, 199)
+        """Interact with the button `see the grades`"""
+        logger.debug("See the grades method.")
+        pyautogui.moveTo(x=self.eixoX, y=self.eixoY_dropdown_menu) 
+        pyautogui.moveTo(x=self.eixoX, y=215)
         pyautogui.click()
-        time.sleep(2)
+        time.sleep(5)
         pyautogui.scroll(-20, x=512, y=900)
-        time.sleep(8)
+        logger.debug("Success!")
 
     def ver_atestado(self):
-        pyautogui.moveTo(self.eixoX, self.eixoY_ensino) #menu ensino
-        pyautogui.moveTo(self.eixoX, 244)
+        """Interact with the button `see the certificate of enrollment`"""
+        logger.debug("See the certificate of enrollment method.")
+        pyautogui.moveTo(x=self.eixoX, y=self.eixoY_dropdown_menu) 
+        pyautogui.moveTo(x=self.eixoX, y=257)
         pyautogui.click()
-        time.sleep(10)
+        logger.debug("Success!")
 
     def ver_historico(self):
-        pyautogui.moveTo(self.eixoX, self.eixoY_ensino) #menu ensino
-        pyautogui.moveTo(self.eixoX, 251)
+        """Interact with the button `see the history`"""
+        logger.debug("See the history method.")
+        pyautogui.moveTo(x=self.eixoX, y=self.eixoY_dropdown_menu) 
+        pyautogui.moveTo(x=self.eixoX, y=275)
         pyautogui.click()
-        time.sleep(20)
-        #não abre janela, logo não precisa do método voltar
+        logger.debug("Success!")
     
     def emitir_declaracao_vinculo(self):
-        pyautogui.moveTo(self.eixoX, self.eixoY_ensino) #menu ensino
-        pyautogui.moveTo(self.eixoX, 294)
+        """Interact with the button `see the bond statement method`"""
+        logger.debug("See the bond statement method.")
+        pyautogui.moveTo(x=self.eixoX, y=self.eixoY_dropdown_menu) 
+        pyautogui.moveTo(x=self.eixoX, y=317)
         pyautogui.click()
-        time.sleep(30)
-        #não abre janela, logo não precisa do método voltar
+        logger.debug("Success!")
+
+    def matricula_online(self):
+        """Interact with the button `Online enrollment` then with `Do enrollment`"""
+        logger.debug("Online enrollment method.")
+        pyautogui.moveTo(x=self.eixoX, y=self.eixoY_dropdown_menu) 
+        pyautogui.moveTo(x=self.eixoX, y=388)
+        pyautogui.moveTo(x=788, y=388)
+        pyautogui.click()
+        logger.debug("Success!")
