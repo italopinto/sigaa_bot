@@ -9,6 +9,6 @@ A bot to be used as a cli application, just to open and interact with the site w
 - Make sure to download and unpack the latest version of geckodriver in its repository. You can also use the [get-gecko-driver python package](https://pypi.org/project/get-gecko-driver/) or my other project a bash script [geckodriver_downloader](https://github.com/italopinto/geckodriver_downloader) to automate the download, the unpack and move the driver to a folder in path, this only works on linux OS.
 ### TODO:
 - [X] Make the bot work locally.
-- [X] Make unit tests.
-- [X] Make the sigaa methods work
-- [ ] Organize all the file's project.
+- [X] Make the sigaa methods work.
+- [ ] Formating in PEP 8.
+- [ ] Attach the `sigaabot.sh` in the repo. I use it locally for test and for daily access of the site. 
