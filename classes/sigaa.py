@@ -25,7 +25,7 @@ class SigaaBot:
         self.driver.maximize_window()
         self.user = User()
         self.eixoX = 500
-        self.eixoY_dropdown_menu = 193
+        self.eixoY_dropdown_menu = 195
 
     def sigaa_user(self, name:str, password:str, year:str):
         """Method to take the SIGAA credentials from the user"""
