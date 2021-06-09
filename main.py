@@ -2,7 +2,7 @@ from classes.sigaa import SigaaBot
 from loguru import logger
 from codetiming import Timer
 from sys import argv, implementation
-from os import linesep
+from os import linesep, getenv
 
 
 def main():
@@ -30,6 +30,8 @@ def main():
         robot.emitir_declaracao_vinculo()
     elif cmds[3] == "5":
         robot.matricula_online()
+    else:
+        logger.debug(f"Welcome back {getenv('USER')}!")
     t.stop()
 
 
