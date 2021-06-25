@@ -5,13 +5,6 @@ import pyautogui
 from loguru import logger
 from .user import User
 
-
-# criar uma arvore de elifs para pegar comando diretos no script e rodar só os métodos correspondentes
-# talvez seja uma boa usar um arquivo de python para rodar o codigo e deixar esse com a classe
-# criar um arquivo de log apena para logs de warning e errors
-# botar ele pra rodar com um shell script através do nautilus
-# o caminho para o interpretador da venv poetry é esse: "/home/italo/.cache/pypoetry/virtualenvs/ufpa-sigaa-bot-s4Id-V6p-py3.8/bin/python3"
-
 class SigaaBot:
 
     def __init__(self):
@@ -21,7 +14,11 @@ class SigaaBot:
         # the commented `option` below are used to test this code without open the browser
         #option = Options()
         #option.headless = True
-        self.driver = webdriver.Firefox() #when test, options=option
+        # when test, options=option
+        try:
+            self.driver = webdriver.Firefox()
+        except:
+            self.driver = webdriver.Chrome()
         self.driver.maximize_window()
         self.user = User()
         self.eixoX = 500
