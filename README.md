@@ -16,9 +16,12 @@ A bot to be used as a cli application, just to open and interact with the site w
 - Make sure to download and unpack the latest version of geckodriver in its folder. You can also use the [get-gecko-driver python package](https://pypi.org/project/get-gecko-driver/) or my other project a bash script [geckodriver_downloader](https://github.com/italopinto/geckodriver_downloader) to automate the download, the unpack and move the driver to a folder in path, this only works on linux OS.
 - If you want to use chromedriver will work, as well. However you might face an annoying bug. The browser sudenly shutoff after the bot finishes. I recommend to use geckodriver, but if you know how to fix this feel free to send me a pull request.
 - run: `pip install -r requirements.txt`
+
+## How I use it
+- I use the `sigaabot_shell.bash` file in my pc, inside the `/usr/bin/` to access it anywhere with the terminal. How you could see in the demo above.
 ### TODO:
 - [X] Make the bot work locally.
 - [X] Make the sigaa methods work.
 - [X] Supports both webdrivers. Gecko and Chrome.
 - [ ] Formating in PEP 8.
-- [ ] Attach the `sigaabot.sh` in the repo. I use it locally for test and for daily access of the site. 
+- [X] Attach the `sigaabot.sh` in the repo. I use it locally for test and for daily access of the site. 
