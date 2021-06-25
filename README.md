@@ -13,10 +13,12 @@ It's so terrible the way that we are suposed to interact with the college site. 
 A bot to be used as a cli application, just to open and interact with the site with commands in the terminal.
 
 ## Requirements
-- Make sure to download and unpack the latest version of geckodriver in its repository. You can also use the [get-gecko-driver python package](https://pypi.org/project/get-gecko-driver/) or my other project a bash script [geckodriver_downloader](https://github.com/italopinto/geckodriver_downloader) to automate the download, the unpack and move the driver to a folder in path, this only works on linux OS.
+- Make sure to download and unpack the latest version of geckodriver in its folder. You can also use the [get-gecko-driver python package](https://pypi.org/project/get-gecko-driver/) or my other project a bash script [geckodriver_downloader](https://github.com/italopinto/geckodriver_downloader) to automate the download, the unpack and move the driver to a folder in path, this only works on linux OS.
+- If you want to use chromedriver will work, as well. However you might face an annoying bug. The browser sudenly shutoff after the bot finishes. I recommend to use geckodriver, but if you know how to fix this feel free to send me a pull request.
 - run: `pip install -r requirements.txt`
 ### TODO:
 - [X] Make the bot work locally.
 - [X] Make the sigaa methods work.
+- [X] Supports both webdrivers. Gecko and Chrome.
 - [ ] Formating in PEP 8.
 - [ ] Attach the `sigaabot.sh` in the repo. I use it locally for test and for daily access of the site. 
